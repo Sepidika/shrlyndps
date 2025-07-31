@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Untuk Adek Kakak Tersayang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop></audio>
+    <audio id="voice1"></audio>
+    <audio id="voice2"></audio>
+    <audio id="voice3"></audio>
+
+    <div class="phone-container">
+        <div id="lockscreen">
+            <div class="lockscreen-header">
+                <h1 id="lockscreen-clock">00:01</h1>
+                <p id="lockscreen-date">Jumat, 1 Agustus</p>
+            </div>
+            <div class="notification-stack">
+                <div class="notification">
+                    <span class="notification-icon">💌</span>
+                    <div class="notification-text">
+                        <p>1 Pesan dari Kakak Dika ❤️</p>
+                        <span>Selamat Hari Girlfriend, Sayang!</span>
+                    </div>
+                </div>
+                <div class="notification">
+                    <span class="notification-icon">🎁</span>
+                    <div class="notification-text">
+                        <p>Kejutan Spesial</p>
+                        <span>Ada dunia kecil kita di dalam...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="unlock-prompt">
+                <span>Sentuh untuk Membuka</span>
+            </div>
+        </div>
+        
+        <div id="homescreen">
+            <div class="status-bar"><span id="homescreen-time">00:01</span><span>📶 ❤️ 🔋</span></div>
+            <div class="dynamic-island" id="dynamic-island"><div class="island-compact"><div class="music-info"><span>🎵</span><span id="music-title">Cintanya Aku</span></div><div class="music-wave"><span></span><span></span><span></span></div></div></div>
+
+            <div class="app-grid">
+                <a class="app-icon" onclick="openApp('page-letter')"><div class="icon-bg">💌</div><span class="icon-label">Surat Kakak</span></a>
+                <a class="app-icon" onclick="openApp('page-voicememo')"><div class="icon-bg">🎤</div><span class="icon-label">Pesan Suara</span></a>
+                <a class="app-icon" onclick="openApp('page-map')"><div class="icon-bg">🗺️</div><span class="icon-label">Peta Kenangan</span></a>
+                <a class="app-icon" onclick="openApp('page-gallery')"><div class="icon-bg">🖼️</div><span class="icon-label">Album Kita</span></a>
+            </div>
+
+            <div class="widget-area">
+                <div class="widget photo-widget">
+                    <div class="widget-header"><h3>Kenangan Favorit</h3></div>
+                    <div class="widget-content"><img id="widget-photo" alt="Foto Kenangan"></div>
+                </div>
+                <div class="widget video-widget">
+                    <div class="widget-header"><h3>Momen yang Terulang</h3></div>
+                    <div class="widget-content"><video id="widget-video" autoplay loop muted playsinline></video></div>
+                </div>
+            </div>
+
+            <div class="dock">
+                <a class="app-icon" onclick="alert('Telepon nanti ya, Dek. Kakak kangen.')"><div class="icon-bg">📞</div></a>
+                <a class="app-icon" onclick="alert('Pesan dari Kakak: Happy Girlfriend Day! ❤️')"><div class="icon-bg">💬</div></a>
+                <a class="app-icon" onclick="openApp('page-promises')"><div class="icon-bg">🤞</div></a>
+                <a class="app-icon" onclick="alert('Mikirin adek terus nih...')"><div class="icon-bg">🤔</div></a>
+            </div>
+            <div class="home-indicator"></div>
+        </div>
+
+        <div id="page-letter" class="app-page">
+            <div class="page-header"><a href="#" class="back-button" onclick="closeApp('page-letter')">&lt; Home</a><h2>Surat Spesial Girlfriend Day</h2></div>
+            <div class="page-content letter-content">
+                <p>Untuk adek kakak satu-satunya, Sherly.</p>
+                <p>Selamat Hari Girlfriend, ya, Sayang. Tepat di tanggal 1 Agustus ini, kakak nggak bisa kasih bunga atau cokelat. Kakak cuma bisa kasih ini, sebuah dunia kecil yang isinya cuma tentang kita, yang kakak buat sambil mikirin adek terus.</p>
+                <p>Maafin kakak ya, Dek, kalau LDR ini bikin kita sering nahan rindu. Maaf kalau kakak belum bisa ada di sana buat genggam tangan adek sekarang. Tapi percayalah, Dek, di setiap doa dan di setiap langkah, kakak selalu bawa nama adek. Kakak lagi berjuang di sini, demi masa depan kita.</p>
+                <p>Adek itu alasan kakak buat jadi lebih kuat. Terima kasih ya, sudah sabar, sudah selalu jadi penyemangat terbaik. Terima kasih sudah memilih kakak. Adek adalah bukti bahwa cinta sejati itu tidak mengenal jarak.</p>
+                <p>Tunggu kakak, ya. Sampai hari di mana "sampai jumpa" berubah jadi "selamat datang di rumah". Kakak sayang banget sama adek, lebih dari yang bisa kakak tulis di sini.</p>
+                <div class="signature">Selalu milikmu,<br>Kakak Dika</div>
+            </div>
+        </div>
+
+        <div id="page-voicememo" class="app-page">
+            <div class="page-header"><a href="#" class="back-button" onclick="closeApp('page-voicememo')">&lt; Home</a><h2>Pesan Suara dari Kakak</h2></div>
+            <div class="page-content">
+                <ul class="voicemo-list">
+                    <li class="voicemo-item"><button class="play-btn" onclick="playVoiceMemo(this, 'voice1')">▶</button><div class="voicemo-info"><h4>Khusus Buat Adek</h4><span>0:07</span></div></li>
+                    <li class="voicemo-item"><button class="play-btn" onclick="playVoiceMemo(this, 'voice2')">▶</button><div class="voicemo-info"><h4>Jangan Lupa Senyum!</h4><span>0:05</span></div></li>
+                    <li class="voicemo-item"><button class="play-btn" onclick="playVoiceMemo(this, 'voice3')">▶</button><div class="voicemo-info"><h4>Pengantar Tidur</h4><span>0:10</span></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="page-map" class="app-page">
+            <div class="page-header"><a href="#" class="back-button" onclick="closeApp('page-map')">&lt; Home</a><h2>Peta Kenangan Banyuwangi</h2></div>
+            <div class="page-content">
+                <div id="map-container">
+                    <div class="map-point" style="top: 48%; left: 82%;" onclick="showMapMemory('Pantai Boom', 'Di sinilah semuanya dimulai, Dek. Kencan pertama kita. Kakak nggak akan pernah lupa gugupnya kakak dan manisnya senyum adek hari itu.')"></div>
+                    <div class="map-point" style="top: 52%; left: 65%;" onclick="showMapMemory('Taman Sri Tanjung', 'Tempat pertama kali kita jalan santai nggak jelas, tapi rasanya nyaman banget. Adek inget?')"></div>
+                    <div class="map-point" style="top: 60%; left: 63%;" onclick="showMapMemory('Taman Blambangan', 'Alun-alun yang jadi saksi kita cerita banyak hal. Dari yang penting sampai yang nggak penting sama sekali.')"></div>
+                    <div class="map-point" style="top: 72%; left: 55%;" onclick="showMapMemory('Taman Makam Pahlawan', 'Waktu lewat sini, kita sama-sama janji bakal jadi pahlawan untuk cerita kita sendiri. Kakak nggak akan lupa.')"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-gallery" class="app-page">
+             <div class="page-header"><a href="#" class="back-button" onclick="closeApp('page-gallery')">&lt; Home</a><h2>Album Foto Kita</h2></div>
+             <div class="page-content">
+                <div class="photo-album" id="photo-album">
+                    </div>
+             </div>
+        </div>
+
+        <div id="page-promises" class="app-page">
+            <div class="page-header"><a href="#" class="back-button" onclick="closeApp('page-promises')">&lt; Home</a><h2>Janji Kakak</h2></div>
+            <div class="page-content" style="font-size: 1.1em; line-height: 1.8;">
+                <p>Di hari yang spesial ini, kakak mau berjanji beberapa hal sama adek:</p>
+                <ul style="list-style: '❤️'; padding-left: 20px;">
+                    <li style="margin-bottom:15px;">Kakak janji akan selalu jadi orang pertama yang adek cari saat senang maupun sedih.</li>
+                    <li style="margin-bottom:15px;">Kakak janji akan terus berjuang untuk masa depan kita, untuk membuat semua pengorbanan LDR ini berarti.</li>
+                    <li style="margin-bottom:15px;">Kakak janji untuk selalu percaya sama adek, dan jadi orang yang paling bisa adek percaya.</li>
+                    <li style="margin-bottom:15px;">Kakak janji akan selalu mencintai adek, hari ini, besok, dan selamanya.</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <h3 id="mapModalTitle"></h3>
+            <p id="mapModalText"></p>
+            <button class="close-button" onclick="closeMapModal()">Tutup</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
